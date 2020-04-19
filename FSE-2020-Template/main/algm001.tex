@@ -1,0 +1,20 @@
+\begin{lstlisting}[basicstyle=\small,caption={Algorithm to extract the source and target sequences by ASTParser in PrefixMap},label={algm001}]
+class PrefixMapVisitor extends ASTVisitor{
+    ...
+	void visitAndExtract(MethodDeclaration node,int level,List<Pair> list) {
+	    Pair p=new Pair();
+	    node.getBody().visitAndExtract(node,level,p);
+	}
+	...		
+	void visitAndExtract(ASTNode node,int level,Pair p) {
+		String[] tokens= getTokens(node);
+		
+		for t in tokens{
+		    String sToken=getPrefix(t,level);
+		    p.getSource().append(sToken);
+		    p.getTarget().append(t);
+        }
+	}
+	...
+}
+\end{lstlisting}

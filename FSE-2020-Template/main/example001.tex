@@ -1,0 +1,11 @@
+\begin{lstlisting}[basicstyle=\small,caption={Example of code snippet \cite{030}},label={example001}]
+protected void fireQueueStateChanged() {
+	synchronized (mListeners) {
+		LogUtils.logW("RequestQueue. notifyOfItemInRequestQueue () listener["
+				+ mListeners + "]");
+		for (IQueueListener listener : @mListeners@) {
+			listener. @notifyOfItemInRequestQueue@() ;
+		}
+	}
+}
+\end{lstlisting}
