@@ -3,6 +3,13 @@ To make this approach feasible, we need to study about important technique about
 \subsection{Abstract Syntax Tree}
 The Abstract Syntax Tree (AST) is one of important data structure used in Compiler Design \cite{006}. AST is the intermediate reprsentation of source code which contains different types of AST nodes in different levels in a parsed tree. AST can be understand as the way programming language editor looks at the source code in a given software project. In our project, we interact with Java AST. We use Eclipse JDT \cite{007} to extract information about Java source code. This tool provide a solution for parsing using the AST parser which defined the syntax of over 82 types of ASTs. 
 \subsection{Term Frequency - Inverse Document Frequency}
+The power of current traditional Machine Learning model relies on the architecture of learning from input features in form of decimal number to the output as labels or score. While source code is written by textual information, it is needed to have an approach for converting from textual representation to vector representation. 
+
+Bag of Word (BOW) \cite{007} is considered as the traditional technique for vectorization. The idea of BOW is to build a large vocabulary from set of textual units as sentences, paragraphs or documents. Then, for each textual unit, we build vector for it by representing a word appeared in the unit as 1 and 0 otherwise. Though BOW is straightforward and easy to understand, the main drawback of BOW is that it cannot represent the important of each words inside the set of documents.
+
+TF-IDF \cite{008} is invented to overcome this challenge of BOW. To represent the document as vector without avoiding the important of each words in a document, this approach provide the representation by 2 elements. The first element, term frequency (TF), is used to calculate the frequency of a word occurs in a given document. The Inverse Document Frequency (IDF), in the other side, measure how important of the word in the set of documents is. The total score of TF-IDF for each term \texttt{t} in document \texttt{d} is the product of TF score and IDF score. From this, we can calculate each dimension of each terms to conduct the whole vector for document.
+In our research, we use an extension of TF-IDF n-grams with n equals to 4-grams. The different between original TF-IDF and 4-grams TF-IDF is the latter calculate the score for a sequences with up to 4 words in a corpus while the original one only calculate for each single words.
+
 
 \subsection{Machine Learning Classification}
 \subsection{Machine Learning Regression}
