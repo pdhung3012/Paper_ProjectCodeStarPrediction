@@ -8,9 +8,19 @@ The power of current traditional Machine Learning model relies on the architectu
 Bag of Word (BOW) \cite{007} is considered as the traditional technique for vectorization. The idea of BOW is to build a large vocabulary from set of textual units as sentences, paragraphs or documents. Then, for each textual unit, we build vector for it by representing a word appeared in the unit as 1 and 0 otherwise. Though BOW is straightforward and easy to understand, the main drawback of BOW is that it cannot represent the important of each words inside the set of documents.
 
 TF-IDF \cite{008} is invented to overcome this challenge of BOW. To represent the document as vector without avoiding the important of each words in a document, this approach provide the representation by 2 elements. The first element, term frequency (TF), is used to calculate the frequency of a word occurs in a given document. The Inverse Document Frequency (IDF), in the other side, measure how important of the word in the set of documents is. The total score of TF-IDF for each term \texttt{t} in document \texttt{d} is the product of TF score and IDF score. From this, we can calculate each dimension of each terms to conduct the whole vector for document.
-In our research, we use an extension of TF-IDF n-grams with n equals to 4-grams. The different between original TF-IDF and 4-grams TF-IDF is the latter calculate the score for a sequences with up to 4 words in a corpus while the original one only calculate for each single words.
+\\
+In our research, we use an extension of TF-IDF n-grams with n equals to 4-grams. The different between original TF-IDF and 4-grams TF-IDF is the latter calculate the score for a sequences with up to 4 words in a corpus while the original one only calculate for each single words. We inherit Python class \texttt{TfidfVectorizer} in \cite{009}. There are another vectorization techniques using neural embedding as WordToVec, Glove or DocToVec. Due to the complexity in implementation and training of these approaches, we focus on TF-IDF embedding for this project and leave other embedding techniques for future works.
 
 
 \subsection{Machine Learning Classification}
+In this part, we briefly describe about the main algorithms we use for classification. We use following algorithms: GaussianNB (GNB), Logistic Regression (LR),Decision Tree (DT),
+Random Forest (RF), AdaBoost (AB), Linear Discriminant Analysis (LDA),Quadratic Discriminant Analysis (QDA),
+LinearSVC (LSVC), MLPClassifier (MLPC), GradientBoosting (GB). These are popular ML models implemented in Scikit-learn \cite{010}. Theories of each ML models can be found in \cite{011,012}. 
+
+
 \subsection{Machine Learning Regression}
+We use following algorithms for regression: Decision Tree Regressor, Random Forest Regressor, AdaBoost Regressor,
+XGB Regressor,
+LinearSVR, MLPRegressor, GradientBoosting Regressor. Similar to classification models, theories and Python implementation of these regression models can be found in \cite{010,011,012}.
+
 
