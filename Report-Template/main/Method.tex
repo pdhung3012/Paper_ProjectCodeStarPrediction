@@ -1,5 +1,5 @@
 \section{Method}
-The architecture of of our project is shown as follows. Given a software project in Java, we select the most important files as an input for extracting parsed trees in the form of ASTs. Next, we convert from tree structure of AST to sequences of AST node types. From this sequence, we transform them to a vector represented features of source code.Finally, the ML classification models will predict the range of stars for project, while the ML regression model gives developer information about actual number of stars he/she can get in the next 2 years.
+The architecture of of our project is shown in Figure \ref{fig:mapping_expression}. Given a software project in Java, we select the most important files as an input for extracting parsed trees in the form of ASTs. Next, we convert from tree structure of AST to sequences of AST node types. From this sequence, we transform them to a vector represented features of source code.Finally, the ML classification models will predict the range of stars for project, while the ML regression model gives developer information about actual number of stars he/she can get in the next 2 years.
 
 \begin{figure*}
         \center{\includegraphics[width=\linewidth]
