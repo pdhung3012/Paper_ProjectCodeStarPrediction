@@ -1,1 +1,95 @@
 \section{Result}
+We focus on 3 Research Questions:
+\begin{enumerate}
+    \item \textbf{Research Question (RQ) 1}: How well of the popularity level classification?
+     \item \textbf{RQ 2}: How well of the exact star prediction using regression models?
+      \item \textbf{RQ 3}: Can hyper parameter tuning improve the accuracy?
+\end{enumerate}
+
+
+
+\subsection{RQ 1: Accuracy on Popularity Level Classification}
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
+\hline
+{\color[HTML]{000000} \textbf{No}} & {\color[HTML]{000000} \textbf{ML Model}} & {\color[HTML]{000000} \textbf{Accuracy (\%)}}        \\ \hline
+{\color[HTML]{000000} 1}           & {\color[HTML]{000000} GNB}               & {\color[HTML]{000000} 22.70} \\ \hline
+{\color[HTML]{000000} 2}           & {\color[HTML]{000000} LR}                & {\color[HTML]{000000} 28.62}                         \\ \hline
+{\color[HTML]{000000} 3}           & {\color[HTML]{000000} DT}                & {\color[HTML]{000000} 22.37}                         \\ \hline
+{\color[HTML]{000000} 4}           & {\color[HTML]{000000} RF}                & {\color[HTML]{000000} 21.05}                         \\ \hline
+{\color[HTML]{000000} 5}           & {\color[HTML]{000000} AB}                & {\color[HTML]{000000} 22.70}                         \\ \hline
+{\color[HTML]{000000} 6}           & {\color[HTML]{000000} LDA}               & {\color[HTML]{000000} 29.61}                         \\ \hline
+{\color[HTML]{000000} 7}           & {\color[HTML]{000000} QDA}               & {\color[HTML]{000000} 25.99}                         \\ \hline
+{\color[HTML]{000000} \textbf{8}}  & {\color[HTML]{000000} \textbf{SVC}}      & {\color[HTML]{000000} \textbf{32.89}}                \\ \hline
+{\color[HTML]{000000} 9}           & {\color[HTML]{000000} MLP}               & {\color[HTML]{000000} 30.26}                         \\ \hline
+{\color[HTML]{000000} 10}          & {\color[HTML]{000000} GBo}               & {\color[HTML]{000000} 28.62}                         \\ \hline
+\end{tabular}
+\label{tblRQ1}
+\caption{Github Project Popularity Level Classification Result}
+\end{table}
+
+
+\subsection{RQ 2: Accuracy on Popularity Prediction}
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
+\hline
+{\color[HTML]{000000} \textbf{No}} & {\color[HTML]{000000} \textbf{ML Model}} & {\color[HTML]{000000} \textbf{MAE}}    \\ \hline
+{\color[HTML]{000000} 1}           & {\color[HTML]{000000} DTR}               & {\color[HTML]{000000} 1111.02}         \\ \hline
+{\color[HTML]{000000} 2}           & {\color[HTML]{000000} RFR}               & {\color[HTML]{000000} 878.68}          \\ \hline
+{\color[HTML]{000000} 3}           & {\color[HTML]{000000} ABR}               & {\color[HTML]{000000} 4366.48}         \\ \hline
+{\color[HTML]{000000} 4}           & {\color[HTML]{000000} XGBR}              & {\color[HTML]{000000} 657.27}          \\ \hline
+{\color[HTML]{000000} \textbf{5}}  & {\color[HTML]{000000} \textbf{LSVR}}     & {\color[HTML]{000000} \textbf{604.02}} \\ \hline
+{\color[HTML]{000000} 6}           & {\color[HTML]{000000} MLPR}              & {\color[HTML]{000000} 786.77}          \\ \hline
+{\color[HTML]{000000} 7}           & {\color[HTML]{000000} GBR}               & {\color[HTML]{000000} 836.53}          \\ \hline
+\end{tabular}
+\label{tblRQ2}
+\caption{Github Project Popularity Prediction Result}
+
+\end{table}
+
+\subsection{RQ 3: Tuning Hyper Parameter Results}
+\subsubsection{RQ 3.1: Tuning result on Support Vector Machine Classification}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+{\color[HTML]{000000} \textbf{Metric}} & {\color[HTML]{000000} \textbf{Range}}                 & {\color[HTML]{000000} \textbf{Best Param}} & {\color[HTML]{000000} \textbf{Best Acc}}         & {\color[HTML]{000000} \textbf{Origin Acc}}       \\ \hline
+{\color[HTML]{000000} C}               & {\color[HTML]{000000} 1}                              & {\color[HTML]{000000} 1}                   & {\color[HTML]{000000} }                          & {\color[HTML]{000000} }                          \\ \cline{1-3}
+{\color[HTML]{000000} kernel}          & {\color[HTML]{000000} {[}'rbf', 'poly', 'sigmoid'{]}} & {\color[HTML]{000000} rbf}                 & \multirow{-2}{*}{{\color[HTML]{000000} 32.89\%}} & \multirow{-2}{*}{{\color[HTML]{000000} 32.89\%}} \\ \hline
+\end{tabular}
+\label{tblRQ31}
+\caption{Result on Support Vector Machine Classification's tuning}
+\end{table}
+
+\subsubsection{RQ 3.2: Tuning result on XGBoost Regressor}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+{\color[HTML]{000000} \textbf{Metric}}   & {\color[HTML]{000000} \textbf{Range}} & {\color[HTML]{000000} \textbf{Best Param}} & {\color[HTML]{000000} \textbf{Best MAE}}        & {\color[HTML]{000000} \textbf{Default MAE}}     \\ \hline
+{\color[HTML]{000000} objective}         & {\color[HTML]{000000} reg:linear}     & {\color[HTML]{000000} reg:linear}          & {\color[HTML]{000000} }                         & {\color[HTML]{000000} }                         \\ \cline{1-3}
+{\color[HTML]{000000} colsample\_bytree} & {\color[HTML]{000000} 0.3}            & {\color[HTML]{000000} 0.3}                 & {\color[HTML]{000000} }                         & {\color[HTML]{000000} }                         \\ \cline{1-3}
+{\color[HTML]{000000} learning\_rate}    & {\color[HTML]{000000} {[}0.1,1{]}}    & {\color[HTML]{000000} 0.1}                 & {\color[HTML]{000000} }                         & {\color[HTML]{000000} }                         \\ \cline{1-3}
+{\color[HTML]{000000} max\_depth}        & {\color[HTML]{000000} {[} 1,3,5{]}}   & {\color[HTML]{000000} 5}                   & {\color[HTML]{000000} }                         & {\color[HTML]{000000} }                         \\ \cline{1-3}
+{\color[HTML]{000000} alpha}             & {\color[HTML]{000000} {[}10,20{]}}    & {\color[HTML]{000000} 10}                  & {\color[HTML]{000000} }                         & {\color[HTML]{000000} }                         \\ \cline{1-3}
+{\color[HTML]{000000} n\_estimators}     & {\color[HTML]{000000} {[}10,100{]}}   & {\color[HTML]{000000} 10}                  & \multirow{-6}{*}{{\color[HTML]{000000} 648.02}} & \multirow{-6}{*}{{\color[HTML]{000000} 657.27}} \\ \hline
+\end{tabular}
+\label{tblRQ32}
+\caption{Result on XGBoost Regression's Tuning}
+\end{table}
