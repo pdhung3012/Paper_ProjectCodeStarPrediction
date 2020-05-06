@@ -1,5 +1,5 @@
 \section{Result}
-We focus on 3 Research Questions:
+For preparing the data for training and testing, we split the data in \cite{013} by 2 sets: training and testing. For the training set, we have 9000 projects. We use 305 projects as the testing data set. We use the same training and testing set used in \cite{013} in their research work.  We focus on 3 Research Questions:
 \begin{enumerate}
     \item \textbf{Research Question (RQ) 1}: How well of the popularity level classification?
      \item \textbf{RQ 2}: How well of the exact star prediction using regression models?
@@ -31,6 +31,8 @@ We focus on 3 Research Questions:
 \label{tblRQ1}
 \caption{Github Project Popularity Level Classification Result}
 \end{table}
+
+The result for popularity level prediction is shown on Table \ref{tblRQ1}. We use the accuracy function in \cite{010} to compare between ML models. We tried with 10 different ML models. In these models, we used default configurations by \cite{010}. The result shows challenges of the prediction based on the source code only. We achieved the highest accuracy on Support Vector Machine, while lowest on Random Forest. The Neural Network achieved good results compared to other ML models. The Gaussian Naive Bayes seems to have the best running time, but it achieved low accuracy. This result shows that the Random Forest might need to have parameter tuning in future works.
 
 
 \subsection{RQ 2: Accuracy on Popularity Prediction}
