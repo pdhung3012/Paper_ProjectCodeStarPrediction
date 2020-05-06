@@ -1,5 +1,5 @@
 \section{Result}
-For preparing the data for training and testing, we split the data in \cite{013} by 2 sets: training and testing. For the training set, we have 9000 projects. We use 305 projects as the testing data set. We use the same training and testing set used in \cite{013} in their research work.  We focus on 3 Research Questions:
+For preparing the data for training and testing, we split the data in \cite{013} by 2 sets: training and testing. For the training set, we have 9000 projects. We use 305 projects as the testing data set. We use the same training and testing set used in \cite{013} in their research work. To get the label as star information for each projects, we used Github API to make queries for getting projects' metadata. In other words, we use source code from 2018 to predict the star in April, 2020.  We focus on 3 Research Questions:
 \begin{enumerate}
     \item \textbf{Research Question (RQ) 1}: How well of the popularity level classification?
      \item \textbf{RQ 2}: How well of the exact star prediction using regression models?
@@ -57,8 +57,11 @@ The result for popularity level prediction is shown on Table \ref{tblRQ1}. We us
 
 \end{table}
 
+From result showed in Table \ref{tblRQ2}, we can have some observations. We use Mean Absolute Error (MAE), which is a popular metric in ML regression to check the correlation between predicted result and expected result. In our research problem, it is the number of stars for each project. First, the predicted stars seems to be very high compared to the expected results in many projects. One of possible reason is that the training data contains many project with extremely high stars with more than 50000 stars, which can lead to imbalanced data problem. Second, the Linear Support Vector Machine and the XGBoost Regressor tends to have the best MAE although they are also worst in running time. This shows the potential to improve the accuracy by tuning parameters, which we show in the last RQ.
+
 \subsection{RQ 3: Tuning Hyper Parameter Results}
 \subsubsection{RQ 3.1: Tuning result on Support Vector Machine Classification}
+We observe the result in Table \ref{tblRQ31}. It shows that the best kernel function is also the default kernel function. One possible reason is that the Github projects' stars might be in Gaussian distribution. Other reason may be the other two kernel functions are used better in neural network than SVM. 
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
@@ -95,3 +98,6 @@ The result for popularity level prediction is shown on Table \ref{tblRQ1}. We us
 \label{tblRQ32}
 \caption{Result on XGBoost Regression's Tuning}
 \end{table}
+
+The result of tuning XGBoost is shown in \ref{tblRQ32}. From this result, we can see that if we make hyper parameter tuning, the MAE can be better significantly. The algorithm tends to work better with lower learning rate. For the max depth, the higher max depth brings better result, since the XGBoost can learn more information. One of surprised thing we see is that with low number of estimator, we achieve better MAE. Higher number of estimators caused significantly increasing in performance, so we expected the XGBoost will get better accuracy with large size estimator. The result reveals that large number of estimators doesn't mean increasing the accuracy.
+
